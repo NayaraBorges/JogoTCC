@@ -4,15 +4,15 @@
  */
 package br.edu.domainModel;
 
+import java.util.Date;
 import java.util.List;
-import org.joda.time.DateTime;
 
 /**
  *
  * @author Nayara
  */
 public interface IApostaRepositorio extends IRepositorio <Aposta>{
-    List<Aposta> listarPorData(DateTime dataAposta);
+    List<Aposta> listarPorData(Date dataAposta);
     List<Aposta> listarPorJogo(Jogo jogo);
     List<Aposta> listarPorUsuario(Usuario usuario);
 }

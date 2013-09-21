@@ -5,10 +5,9 @@
 package br.edu.dataAccess;
 
 import br.edu.domainModel.*;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Query;
-import org.joda.time.DateTime;
-
 /**
  *
  * @author NAYARA
@@ -38,7 +37,7 @@ public class JogoDAO extends DAOGenerico<Jogo> implements IJogoRepositorio{
     }
 
     @Override
-    public List<Jogo> listarPorDataJogo(DateTime dataJogo) {
+    public List<Jogo> listarPorDataJogo(Date dataJogo) {
         Query query=(Query) manager.createQuery("select u from Jogo u where u.dataJogo=:p");
         query.setParameter("p", dataJogo);
         return query.getResultList();

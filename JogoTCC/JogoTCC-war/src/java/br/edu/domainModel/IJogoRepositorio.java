@@ -4,8 +4,8 @@
  */
 package br.edu.domainModel;
 
+import java.util.Date;
 import java.util.List;
-import org.joda.time.DateTime;
 
 /**
  *
@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
  */
 public interface IJogoRepositorio extends IRepositorio <Jogo>{
     List<Jogo> listarPorFase(Fase fase);
-    List<Jogo> listarPorDataJogo(DateTime dataJogo);
+    List<Jogo> listarPorDataJogo(Date dataJogo);
     List<Jogo> listarPorSelecao(Selecao selecao);
     List<Jogo> listarPorEstadio(Estadio estadio);
     

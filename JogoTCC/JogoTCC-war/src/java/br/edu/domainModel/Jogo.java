@@ -5,6 +5,7 @@
 package br.edu.domainModel;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import org.joda.time.DateTime;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -36,38 +37,38 @@ public class Jogo implements Serializable{
     private int placar1;
     @Column(name="Placar2")
     private int placar2;
-    @Column(name="DataJogo")
-    private DateTime data;
-    @Column(name="HoraJogo")
-    private DateTime hora;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date data;
+    @Temporal(javax.persistence.TemporalType.TIME)
+    private Date hora;
     @OneToOne
     private Estadio estadio;
     @OneToOne
     private Usuario usuarioInclusao;
     @OneToOne
     private Usuario usuarioAlteracao;
-    @Column(name="DataInclusao")
-    private DateTime dataInclusao;
-    @Column(name="DataAlteracao")
-    private DateTime dataAlteracao;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataInclusao;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataAlteracao;
 
-    public DateTime getData() {
+    public Date getData() {
         return data;
     }
 
-    public DateTime getDataAlteracao() {
+    public Date getDataAlteracao() {
         return dataAlteracao;
     }
 
-    public void setDataAlteracao(DateTime dataAlteracao) {
+    public void setDataAlteracao(Date dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
     }
 
-    public DateTime getDataInclusao() {
+    public Date getDataInclusao() {
         return dataInclusao;
     }
 
-    public void setDataInclusao(DateTime dataInclusao) {
+    public void setDataInclusao(Date dataInclusao) {
         this.dataInclusao = dataInclusao;
     }
 
@@ -87,7 +88,7 @@ public class Jogo implements Serializable{
         this.usuarioInclusao = usuarioInclusao;
     }
 
-    public void setData(DateTime data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -107,11 +108,11 @@ public class Jogo implements Serializable{
         this.fase = fase;
     }
 
-    public DateTime getHora() {
+    public Date getHora() {
         return hora;
     }
 
-    public void setHora(DateTime hora) {
+    public void setHora(Date hora) {
         this.hora = hora;
     }
 
@@ -154,7 +155,5 @@ public class Jogo implements Serializable{
     public void setSelecao2(Selecao selecao2) {
         this.selecao2 = selecao2;
     }
-    
-    
     
 }

@@ -5,7 +5,6 @@
 package br.edu.domainModel;
 
 import java.util.List;
-import org.joda.time.DateTime;
 
 /**
  *

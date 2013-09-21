@@ -8,9 +8,9 @@ import br.edu.domainModel.Aposta;
 import br.edu.domainModel.IApostaRepositorio;
 import br.edu.domainModel.Jogo;
 import br.edu.domainModel.Usuario;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Query;
-import org.joda.time.DateTime;
 
 /**
  *
@@ -34,7 +34,7 @@ public class ApostaDAO extends DAOGenerico<Aposta> implements IApostaRepositorio
     }
 
     @Override
-    public List<Aposta> listarPorData(DateTime dataAposta) {
+    public List<Aposta> listarPorData(Date dataAposta) {
         Query query=(Query) manager.createQuery("select u from Aposta u where u.dataAposta=:p");
         query.setParameter("p", dataAposta);
         return query.getResultList();

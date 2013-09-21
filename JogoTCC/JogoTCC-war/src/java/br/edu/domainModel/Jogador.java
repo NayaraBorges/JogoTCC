@@ -5,8 +5,8 @@
 package br.edu.domainModel;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
-import org.joda.time.DateTime;
 
 /**
  *
@@ -29,24 +29,24 @@ public class Jogador implements Serializable{
     private Usuario usuarioInclusao;
     @OneToOne
     private Usuario usuarioAlteracao;
-    @Column(name="DataInclusao")
-    private DateTime dataInclusao;
-    @Column(name="DataAlteracao")
-    private DateTime dataAlteracao;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataInclusao;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataAlteracao;
 
-    public DateTime getDataAlteracao() {
+    public Date getDataAlteracao() {
         return dataAlteracao;
     }
 
-    public void setDataAlteracao(DateTime dataAlteracao) {
+    public void setDataAlteracao(Date dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
     }
 
-    public DateTime getDataInclusao() {
+    public Date getDataInclusao() {
         return dataInclusao;
     }
 
-    public void setDataInclusao(DateTime dataInclusao) {
+    public void setDataInclusao(Date dataInclusao) {
         this.dataInclusao = dataInclusao;
     }
 

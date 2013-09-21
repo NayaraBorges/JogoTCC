@@ -5,8 +5,9 @@
 package br.edu.domainModel;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
-import org.joda.time.DateTime;
+
 
 /**
  *
@@ -20,8 +21,8 @@ public class Aposta implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ApostaID")
     protected Long id;
-    @Column(name="DataAposta")
-    private DateTime dataAposta;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataAposta;
     @Column(name="Placar1")
     private int placar1;
     @Column(name="Placar2")
@@ -31,11 +32,11 @@ public class Aposta implements Serializable{
     @OneToOne
     private Jogo jogo;
 
-    public DateTime getDataAposta() {
+    public Date getDataAposta() {
         return dataAposta;
     }
 
-    public void setDataAposta(DateTime dataAposta) {
+    public void setDataAposta(Date dataAposta) {
         this.dataAposta = dataAposta;
     }
 
