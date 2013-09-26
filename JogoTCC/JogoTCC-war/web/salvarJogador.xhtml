@@ -10,7 +10,7 @@
     <h:body>
         <h:form>
             <ui:include src="cabecalho.xhtml"/>
-            <h3>Cadastramento de jogadores</h3><p/>
+            <h3>Cadastro de jogadores</h3><p/>
             <h:panelGrid columns="2">
     
                 <h:outputText value="Nome"/>  
@@ -19,13 +19,15 @@
                 <p:inputText id="txtNumeroCamisa" value="#{jogador.numeroCamisa}"/>
                 <h:outputText value="Seleção"/>  
                 <p:inputText id="txtSelecao" value="#{jogador.selecao}" />
-
+                <p:commandButton id="salvar2" value="Salvar" ajax="false" action="#{jogador.salvar()}" oncomplete="msgSalvar.hide()" />
+                <p:commandButton id="cancelar2" value="Cancelar" oncomplete="msgSalvar.hide()" />
             </h:panelGrid>
-
+            
             <p:confirmDialog message="Deseja realmente salvar?" widgetVar="msgSalvar">
                 <p:commandButton id="salvar" value="Sim" ajax="false" action="#{jogador.salvar()}" oncomplete="msgSalvar.hide()" />
                 <p:commandButton id="cancelar" value="Não" oncomplete="msgSalvar.hide()" />
             </p:confirmDialog>
+                
         </h:form>
     </h:body>
 </html>

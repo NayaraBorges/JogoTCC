@@ -10,7 +10,7 @@
     <h:body>
         <h:form>
             <ui:include src="cabecalho.xhtml"/>
-            <h3>Cadastramento de jogos</h3><p/>
+            <h3>Cadastro de jogos</h3><p/>
             <h:panelGrid columns="2">
     
                 <h:outputText value="Fase"/>  
@@ -25,7 +25,8 @@
                 <p:inputText id="txtSelecao2" value="#{jogo.selecao2}" />
                 <h:outputText value="Estádio"/>  
                 <p:inputText id="txtEstadio" value="#{jogo.estadio}" />
-
+                <p:commandButton id="salvar2" value="Salvar" ajax="false" action="#{jogo.salvar()}" oncomplete="msgSalvar.hide()" />
+                <p:commandButton id="cancelar2" value="Cancelar" oncomplete="msgSalvar.hide()" />
             </h:panelGrid>
 
             <p:confirmDialog message="Deseja realmente salvar?" widgetVar="msgSalvar">

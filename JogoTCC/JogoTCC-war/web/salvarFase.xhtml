@@ -10,12 +10,13 @@
     <h:body>
         <h:form>
             <ui:include src="cabecalho.xhtml"/>
-            <h3>Cadastramento de fases</h3><p/>
+            <h3>Cadastro de fases</h3><p/>
             <h:panelGrid columns="2">
     
                 <h:outputText value="Descrição"/>  
                 <p:inputText id="txtDescricao" value="#{fase.descricao}" />
-                
+                <p:commandButton id="salvar2" value="Salvar" ajax="false" action="#{fase.salvar()}" oncomplete="msgSalvar.hide()" />
+                <p:commandButton id="cancelar2" value="Cancelar" oncomplete="msgSalvar.hide()" />
             </h:panelGrid>
 
             <p:confirmDialog message="Deseja realmente salvar?" widgetVar="msgSalvar">
