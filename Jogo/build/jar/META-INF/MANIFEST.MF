@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Ant-Version: Apache Ant 1.8.4
 Created-By: 1.7.0_10-b18 (Oracle Corporation)
 X-COMMENT: Main-Class will be added automatically by build
+Main-Class: jogo.Main
 Class-Path: primefaces-3.5.jar lib/primefaces-3.5.jar commons-fileuplo
  ad-1.3.jar lib/commons-fileupload-1.3.jar cupertino-1.0.10.jar lib/cu
  pertino-1.0.10.jar 
-Main-Class: jogo.Main
 

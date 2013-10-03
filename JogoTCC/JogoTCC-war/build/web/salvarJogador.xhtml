@@ -19,13 +19,17 @@
                 <p:inputText id="txtNumeroCamisa" value="#{jogador.numeroCamisa}"/>
                 <h:outputText value="Seleção"/>  
                 <p:inputText id="txtSelecao" value="#{jogador.selecao}" />
-                <p:commandButton id="salvar2" value="Salvar" ajax="false" action="#{jogador.salvar()}" oncomplete="msgSalvar.hide()" />
-                <p:commandButton id="cancelar2" value="Cancelar" oncomplete="msgSalvar.hide()" />
+                 <p:commandButton id="salvar" value="Salvar" onclick="msgSalvar.show();" />
+                <p:commandButton id="cancelar" value="Cancelar" oncomplete="msgSalvar.hide()" />
             </h:panelGrid>
-            
-            <p:confirmDialog message="Deseja realmente salvar?" widgetVar="msgSalvar">
-                <p:commandButton id="salvar" value="Sim" ajax="false" action="#{jogador.salvar()}" oncomplete="msgSalvar.hide()" />
-                <p:commandButton id="cancelar" value="Não" oncomplete="msgSalvar.hide()" />
+
+            <p:confirmDialog id="dlgSalvar" message="Confirma gravação dos dados?"
+                             header="Confirmar" severity="alert" widgetVar="msgSalvar">
+                <p:commandButton id="confirma" value="Sim" oncomplete="msgSalvar.hide()"
+                                 action="#{jogador.salvar()}"/>
+                <p:commandButton id="cancela" value="Não" oncomplete="msgSalvar.hide()"
+                                 onclick="msgSalvar.hide();"/>
+                
             </p:confirmDialog>
                 
         </h:form>
